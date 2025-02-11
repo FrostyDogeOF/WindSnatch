@@ -1,0 +1,204 @@
+[gd_scene load_steps=20 format=3 uid="uid://su3mhdjncaee"]
+
+[ext_resource type="PackedScene" uid="uid://cpr3w07bws4r7" path="res://rain_shader.tscn" id="1_8rtoj"]
+[ext_resource type="PackedScene" uid="uid://bujy17xvicob1" path="res://charcter_defualt.tscn" id="1_d3sl0"]
+[ext_resource type="Script" path="res://rain_shader.gd" id="2_j0ecb"]
+[ext_resource type="PackedScene" uid="uid://bvl5fe2uh1wqs" path="res://platform_default.tscn" id="2_jcsud"]
+[ext_resource type="PackedScene" uid="uid://cdocj3p4u3ld1" path="res://switch.tscn" id="3_6jdnp"]
+[ext_resource type="PackedScene" uid="uid://s1t6lm6sblpw" path="res://textlol.tscn" id="4_b1y7b"]
+[ext_resource type="PackedScene" uid="uid://damxciwpd14nj" path="res://window.tscn" id="6_8howt"]
+[ext_resource type="Script" path="res://window.gd" id="7_8ixhf"]
+[ext_resource type="Script" path="res://check_box_4.gd" id="9_0j03l"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ety4i"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jpj03"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eoek5"]
+size = Vector2(0.23217, 20.9221)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dvj6"]
+size = Vector2(2.83533, 6.49351)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4axd4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ql650"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5qiqw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jo4o1"]
+size = Vector2(0.140009, 4.20779)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmjf1"]
+size = Vector2(207.25, 1359.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmkon"]
+size = Vector2(2123, 250.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="rainshadermedium" parent="." instance=ExtResource("1_8rtoj")]
+script = ExtResource("2_j0ecb")
+
+[node name="Control" parent="." instance=ExtResource("4_b1y7b")]
+offset_left = 161.0
+offset_top = 385.0
+offset_right = 161.0
+offset_bottom = 385.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(13, 510)
+physics_material_override = SubResource("PhysicsMaterial_ety4i")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+position = Vector2(1021.5, 218.875)
+scale = Vector2(3639, 242.25)
+mesh = SubResource("BoxMesh_jpj03")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-272.062, -308.25)
+scale = Vector2(1146.25, 38.5)
+shape = SubResource("RectangleShape2D_eoek5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1218, 223)
+scale = Vector2(1146.25, 38.5)
+shape = SubResource("RectangleShape2D_0dvj6")
+
+[node name="charcter_defualt" parent="StaticBody2D" instance=ExtResource("1_d3sl0")]
+position = Vector2(396, -77)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_jcsud")]
+position = Vector2(258, 489)
+scale = Vector2(-19.3442, -12.9264)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_jcsud")]
+position = Vector2(777, 489)
+scale = Vector2(-11.1179, -12.9264)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_jcsud")]
+position = Vector2(1040, 405)
+scale = Vector2(-11.1179, -12.9264)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("2_jcsud")]
+position = Vector2(1323, 340)
+scale = Vector2(-11.1179, -12.9264)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("2_jcsud")]
+position = Vector2(1819, 273)
+scale = Vector2(-18.2379, -12.9264)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("2_jcsud")]
+position = Vector2(4919, 459)
+scale = Vector2(-14.0716, -19.6627)
+
+[node name="StaticBody2D10" parent="." instance=ExtResource("2_jcsud")]
+position = Vector2(4646, 286)
+scale = Vector2(-14.0716, -19.6627)
+
+[node name="StaticBody2D11" parent="." instance=ExtResource("2_jcsud")]
+position = Vector2(4923, 88)
+scale = Vector2(-14.0716, -19.6627)
+
+[node name="StaticBody2D12" parent="." instance=ExtResource("2_jcsud")]
+position = Vector2(4651, -65)
+scale = Vector2(-14.0716, -19.6627)
+
+[node name="StaticBody2D13" parent="." instance=ExtResource("2_jcsud")]
+position = Vector2(4920, -223)
+scale = Vector2(-14.0716, -19.6627)
+
+[node name="StaticBody2D14" parent="." instance=ExtResource("2_jcsud")]
+position = Vector2(4650, -390)
+scale = Vector2(-14.0716, -19.6627)
+
+[node name="StaticBody2D15" parent="." instance=ExtResource("2_jcsud")]
+position = Vector2(4919, -547)
+scale = Vector2(-14.0716, -19.6627)
+
+[node name="StaticBody2D16" parent="." instance=ExtResource("2_jcsud")]
+position = Vector2(4651, -708)
+scale = Vector2(-14.0716, -19.6627)
+
+[node name="StaticBody2D17" parent="." instance=ExtResource("2_jcsud")]
+position = Vector2(5131, -765)
+scale = Vector2(38.9143, -17.9043)
+
+[node name="StaticBody2D18" parent="." instance=ExtResource("2_jcsud")]
+position = Vector2(4323, -784)
+scale = Vector2(-82.6283, -43.2788)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("2_jcsud")]
+position = Vector2(1774, 155)
+scale = Vector2(-12.9179, -12.9264)
+
+[node name="CollisionShape2D" parent="StaticBody2D7" index="1"]
+position = Vector2(9.0009, -2.0079)
+rotation = 3.14179
+one_way_collision = true
+
+[node name="Area2D" parent="." instance=ExtResource("3_6jdnp")]
+position = Vector2(2550, 608)
+scale = Vector2(29.68, 19.24)
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D8"]
+position = Vector2(4075.13, 732.875)
+scale = Vector2(2123.75, 250.25)
+mesh = SubResource("BoxMesh_4axd4")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D8/MeshInstance2D"]
+position = Vector2(0.451029, -3.21603)
+scale = Vector2(0.0974101, 5.43507)
+mesh = SubResource("BoxMesh_ql650")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D8/MeshInstance2D/MeshInstance2D"]
+position = Vector2(-3.84184, -4.59061e-05)
+scale = Vector2(1.43293, 1)
+mesh = SubResource("BoxMesh_5qiqw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
+position = Vector2(4238.33, -225.5)
+scale = Vector2(2123.75, 250.25)
+shape = SubResource("RectangleShape2D_jo4o1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D8"]
+position = Vector2(5033.38, -72.25)
+shape = SubResource("RectangleShape2D_tmjf1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D8"]
+position = Vector2(4075.5, 732.75)
+shape = SubResource("RectangleShape2D_mmkon")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 3825.0
+offset_top = 354.0
+offset_right = 4024.0
+offset_bottom = 456.0
+text = "Some Walls May be fake!
+Walk through them to find out!"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 5519.0
+offset_top = -825.0
+offset_right = 5668.0
+offset_bottom = -785.0
+scale = Vector2(1.14622, 1)
+text = "You found a secret!"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Window" parent="." instance=ExtResource("6_8howt")]
+script = ExtResource("7_8ixhf")
+
+[node name="CheckBox4" parent="Window" index="4"]
+script = ExtResource("9_0j03l")
+
+[connection signal="body_entered" from="Area2D" to="StaticBody2D/charcter_defualt" method="_on_area_2d_body_entered"]
+[connection signal="close_requested" from="Window" to="Window" method="_on_close_requested"]
+[connection signal="toggled" from="Window/CheckBox4" to="rainshadermedium" method="_on_check_box_4_toggled"]
+
+[editable path="StaticBody2D7"]
+[editable path="Area2D"]
+[editable path="Window"]

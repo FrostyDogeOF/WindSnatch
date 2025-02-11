@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://2mxhqf0bgj57"]
+
+[sub_resource type="Shader" id="Shader_6uccf"]
+code = "shader_type canvas_item;
+
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, filter_linear_mipmap;
+
+uniform int pixel_size : hint_range(1, 64) = 4; // Pixel size
+uniform vec2 screen_size = vec2(1920.0, 1080.0); // Screen size (set manually)
+
+void fragment() {
+    //Pixel coordinates in screen space
+    vec2 pixel_coords = floor(FRAGCOORD.xy / float(pixel_size)) * float(pixel_size);
+    // Convert pixel coordinates to UVs for screen texture
+    vec2 uv = pixel_coords / screen_size;
+    // Get color from texture screen
+    COLOR = texture(SCREEN_TEXTURE, uv);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6jxf1"]
+shader = SubResource("Shader_6uccf")
+shader_parameter/pixel_size = 1
+shader_parameter/screen_size = Vector2(1920, 1080)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6jxf1")
+anchors_preset = -1
+anchor_top = -0.314815
+anchor_right = 0.907118
+anchor_bottom = 0.62963
+offset_left = 648.0
+offset_top = 200.0
+offset_right = 97.0
+offset_bottom = -4.0

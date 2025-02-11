@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bujy17xvicob1"]
+
+[ext_resource type="Script" path="res://charcter_defualt.gd" id="1_uxmn1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xfkav"]
+radius = 0.5
+height = 2.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_f1xhf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cg03k"]
+
+[node name="charcter_defualt" type="CharacterBody2D"]
+floor_constant_speed = true
+script = ExtResource("1_uxmn1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -533.0
+offset_top = -554.0
+offset_right = -407.0
+offset_bottom = -514.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_right = 149.0
+offset_bottom = 40.0
+theme_override_colors/default_color = Color(0.287644, 0.574399, 1, 1)
+text = "Pre Alpha 2025 0.3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7.75, -13)
+scale = Vector2(16.5, 14)
+shape = SubResource("CapsuleShape2D_xfkav")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(7.75, -13)
+scale = Vector2(16.5, 14)
+mesh = SubResource("CapsuleMesh_f1xhf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+material = SubResource("ShaderMaterial_cg03k")
+position = Vector2(44, -226)
