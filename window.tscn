@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://damxciwpd14nj"]
+[gd_scene load_steps=3 format=3 uid="uid://damxciwpd14nj"]
 
 [ext_resource type="PackedScene" uid="uid://b182q0ee1u0mq" path="res://crt.tscn" id="1_xbcha"]
+[ext_resource type="AudioStream" uid="uid://ub1y70deo1ct" path="res://tv-static-03.wav" id="2_tx4q1"]
 
 [node name="Window" type="Window"]
 title = "Test"
@@ -60,3 +61,7 @@ value = 50.0
 rounded = true
 tick_count = 1
 ticks_on_borders = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_tx4q1")
+autoplay = true

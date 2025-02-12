@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Settings Menu"):
 		visible = true
-	
+	$AudioStreamPlayer2D.play()
 
 func _on_close_requested() -> void:
 	visible = false
