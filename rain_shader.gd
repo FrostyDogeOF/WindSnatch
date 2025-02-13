@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_check_box_4_toggled(toggled_on: bool):
-	visible = false
+	visible = toggled_on

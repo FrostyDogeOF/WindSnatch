@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://su3mhdjncaee"]
+[gd_scene load_steps=22 format=3 uid="uid://su3mhdjncaee"]
 
 [ext_resource type="PackedScene" uid="uid://cpr3w07bws4r7" path="res://rain_shader.tscn" id="1_8rtoj"]
 [ext_resource type="PackedScene" uid="uid://bujy17xvicob1" path="res://charcter_defualt.tscn" id="1_d3sl0"]
@@ -6,9 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bvl5fe2uh1wqs" path="res://platform_default.tscn" id="2_jcsud"]
 [ext_resource type="PackedScene" uid="uid://cdocj3p4u3ld1" path="res://switch.tscn" id="3_6jdnp"]
 [ext_resource type="PackedScene" uid="uid://s1t6lm6sblpw" path="res://textlol.tscn" id="4_b1y7b"]
+[ext_resource type="Texture2D" uid="uid://c0441gdjdpugh" path="res://assets/images/decor/overlaylower.png" id="5_y5f14"]
 [ext_resource type="PackedScene" uid="uid://damxciwpd14nj" path="res://window.tscn" id="6_8howt"]
 [ext_resource type="Script" path="res://window.gd" id="7_8ixhf"]
 [ext_resource type="Script" path="res://check_box_4.gd" id="9_0j03l"]
+[ext_resource type="Script" path="res://crt.gd" id="9_dqvws"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ety4i"]
 
@@ -64,9 +66,6 @@ shape = SubResource("RectangleShape2D_eoek5")
 position = Vector2(1218, 223)
 scale = Vector2(1146.25, 38.5)
 shape = SubResource("RectangleShape2D_0dvj6")
-
-[node name="charcter_defualt" parent="StaticBody2D" instance=ExtResource("1_d3sl0")]
-position = Vector2(396, -77)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("2_jcsud")]
 position = Vector2(258, 489)
@@ -189,15 +188,28 @@ text = "You found a secret!"
 fit_content = true
 autowrap_mode = 0
 
+[node name="charcter_defualt" parent="." instance=ExtResource("1_d3sl0")]
+position = Vector2(409, 433)
+
+[node name="Overlaylower" type="Sprite2D" parent="charcter_defualt"]
+visible = false
+position = Vector2(44, -215.5)
+scale = Vector2(0.326562, 0.333796)
+texture = ExtResource("5_y5f14")
+
 [node name="Window" parent="." instance=ExtResource("6_8howt")]
 script = ExtResource("7_8ixhf")
+
+[node name="CanvasLayer" parent="Window" index="0"]
+script = ExtResource("9_dqvws")
 
 [node name="CheckBox4" parent="Window" index="4"]
 script = ExtResource("9_0j03l")
 
-[connection signal="body_entered" from="Area2D" to="StaticBody2D/charcter_defualt" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="charcter_defualt" method="_on_area_2d_body_entered"]
 [connection signal="close_requested" from="Window" to="Window" method="_on_close_requested"]
 [connection signal="toggled" from="Window/CheckBox4" to="rainshadermedium" method="_on_check_box_4_toggled"]
+[connection signal="toggled" from="Window/CheckBox4" to="Window/CanvasLayer" method="_on_check_box_4_toggled"]
 
 [editable path="StaticBody2D7"]
 [editable path="Area2D"]
