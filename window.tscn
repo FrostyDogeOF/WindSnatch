@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://damxciwpd14nj"]
+[gd_scene load_steps=3 format=3 uid="uid://damxciwpd14nj"]
 
 [ext_resource type="PackedScene" uid="uid://b182q0ee1u0mq" path="res://crt.tscn" id="1_xbcha"]
+[ext_resource type="Script" uid="uid://5l2mxvurkf3u" path="res://h_slider.gd" id="2_efpu1"]
 
 [node name="Window" type="Window"]
 title = "Test"
@@ -8,6 +9,7 @@ initial_position = 1
 size = Vector2i(600, 400)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("1_xbcha")]
+visible = false
 
 [node name="CheckBox" type="CheckBox" parent="."]
 clip_contents = true
@@ -47,29 +49,26 @@ tooltip_text = "Turns off/on Shaders.
 button_pressed = true
 text = "Shaders"
 
-[node name="CheckBox5" type="CheckBox" parent="."]
-offset_top = 290.0
-offset_right = 136.0
-offset_bottom = 321.0
+[node name="CheckBox6" type="CheckBox" parent="."]
+offset_top = 350.0
+offset_right = 78.0
+offset_bottom = 381.0
 button_pressed = true
-text = "High Graphics"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-anchors_preset = -1
-anchor_top = 0.138
-anchor_right = 0.246
-anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = 162.8
-offset_right = 43.0
-offset_bottom = 202.8
-text = "Movement Sensitivity"
+text = "Debug"
 
 [node name="HSlider" type="HSlider" parent="."]
-offset_top = 200.0
+offset_top = 300.0
 offset_right = 100.0
-offset_bottom = 300.0
-value = 50.0
+offset_bottom = 320.0
+max_value = 4.0
 rounded = true
-tick_count = 1
-ticks_on_borders = true
+script = ExtResource("2_efpu1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HSlider"]
+layout_mode = 0
+offset_top = -30.0
+offset_right = 70.0
+offset_bottom = 10.0
+text = "Quality"
+
+[connection signal="value_changed" from="HSlider" to="HSlider" method="_on_value_changed"]

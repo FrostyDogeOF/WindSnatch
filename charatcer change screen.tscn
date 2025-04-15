@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://bejomimo7t16p"]
+
+[ext_resource type="Texture2D" uid="uid://bc8unma56bat0" path="res://assets/images/CharacterLists/Goo-Ber.png" id="1_cmsmo"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_grdf8"]
+
+[sub_resource type="Gradient" id="Gradient_qd620"]
+interpolation_mode = 2
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.469027, 1)
+colors = PackedColorArray(0, 0, 0.2, 1, 0.235294, 0.533333, 0.784314, 1, 0.427451, 0.870588, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vuood"]
+gradient = SubResource("Gradient_qd620")
+
+[sub_resource type="Gradient" id="Gradient_tqu8s"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sbc08"]
+gradient = SubResource("Gradient_tqu8s")
+fill_from = Vector2(0, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(561.5, 325.375)
+scale = Vector2(873, 475.25)
+texture = SubResource("PlaceholderTexture2D_grdf8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(182.5, 325.125)
+scale = Vector2(0.449219, 475.75)
+texture = SubResource("GradientTexture1D_vuood")
+
+[node name="Goo-ber" type="Sprite2D" parent="."]
+position = Vector2(809.75, 324.75)
+scale = Vector2(0.290885, 0.431944)
+texture = ExtResource("1_cmsmo")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 859.0
+offset_top = 109.0
+offset_right = 971.0
+offset_bottom = 132.0
+bbcode_enabled = true
+text = "Goo-Ber"
+fit_content = true
+scroll_following = true
+tab_size = 9
+threaded = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(400, 495)
+scale = Vector2(3.8125, 1.46875)
+texture = SubResource("GradientTexture2D_sbc08")
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Sprite2D3"]
+offset_left = -28.3279
+offset_top = -31.3191
+offset_right = 32.6721
+offset_bottom = 37.6809
+text = "Character Stats"
+fit_content = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(399, 314)
+scale = Vector2(3.8125, 1.46875)
+texture = SubResource("GradientTexture2D_sbc08")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Sprite2D4"]
+offset_left = -32.2623
+offset_top = -34.0426
+offset_right = 30.7377
+offset_bottom = 34.9574
+text = "Change Charater"
+fit_content = true
+tab_size = 2

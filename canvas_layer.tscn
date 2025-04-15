@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://8vust1ftmvsd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5lyku"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_5lyku")
+offset_right = 40.0
+offset_bottom = 40.0

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnxb7ct273kl"]
+
+[ext_resource type="Texture2D" uid="uid://bunhdj7iaxyq3" path="res://assets/images/shaders/images/rgba-noise-medium.png" id="1_mi7bo"]
+[ext_resource type="Shader" uid="uid://dbgnwgfur46gw" path="res://water.gdshader" id="2_d16p4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pfj4b"]
+shader = ExtResource("2_d16p4")
+shader_parameter/offSet = 0.0
+shader_parameter/YDistortion = 1.0
+shader_parameter/waterNoise = ExtResource("1_mi7bo")
+shader_parameter/waterDistortionNoise = ExtResource("1_mi7bo")
+shader_parameter/waterColor = Color(0.117, 0.27, 0.58, 1)
+shader_parameter/colorCorection = 0.88
+shader_parameter/distortionForce = 0.074
+shader_parameter/WDBrightness = 3.0
+shader_parameter/WDFreq = 0.2
+shader_parameter/WDSize = 0.6
+shader_parameter/WDSpeed = 1.0
+shader_parameter/tiling = Vector2(1, 1)
+shader_parameter/offSetSpeed = Vector2(0.1, 0.1)
+shader_parameter/backGroundDirX = 0.1
+shader_parameter/backGroundDirY = -0.07
+
+[node name="ColorRect" type="ColorRect"]
+material = SubResource("ShaderMaterial_pfj4b")
+offset_right = 40.0
+offset_bottom = 40.0

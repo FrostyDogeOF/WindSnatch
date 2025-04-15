@@ -1,30 +1,22 @@
 [gd_scene load_steps=3 format=3 uid="uid://b182q0ee1u0mq"]
 
-[ext_resource type="Shader" path="res://e.gdshader" id="1_flfjt"]
+[ext_resource type="Shader" uid="uid://crfgyr5mnrg42" path="res://e.gdshader" id="1_flfjt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vf073"]
 shader = ExtResource("1_flfjt")
-shader_parameter/overlay = true
-shader_parameter/resolution = Vector2(1080, 1920)
-shader_parameter/brightness = 1.4
-shader_parameter/scanlines_opacity = 0.4
-shader_parameter/scanlines_width = 0.25
-shader_parameter/grille_opacity = 0.3
-shader_parameter/roll = true
-shader_parameter/roll_speed = 0.1
-shader_parameter/roll_size = 15.0
-shader_parameter/roll_variation = 1.8
-shader_parameter/distort_intensity = 0.05
-shader_parameter/aberration = 0.03
-shader_parameter/noise_opacity = 0.213
-shader_parameter/noise_speed = 200.0
-shader_parameter/static_noise_intensity = 0.137
-shader_parameter/pixelate = false
-shader_parameter/discolor = false
-shader_parameter/warp_amount = 0.2
-shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 0.2
+shader_parameter/offSet = 0.0
+shader_parameter/YDistortion = 1.0
+shader_parameter/waterColor = Color(0.117, 0.27, 0.58, 1)
+shader_parameter/colorCorection = 0.35
+shader_parameter/distortionForce = 0.01
+shader_parameter/WDBrightness = 1.5
+shader_parameter/WDFreq = 0.6
+shader_parameter/WDSize = 0.9
+shader_parameter/WDSpeed = 4.0
+shader_parameter/tiling = Vector2(1, 1)
+shader_parameter/offSetSpeed = Vector2(0.1, 0.1)
+shader_parameter/backGroundDirX = 0.01
+shader_parameter/backGroundDirY = 0.01
 
 [node name="CanvasLayer" type="CanvasLayer"]
 

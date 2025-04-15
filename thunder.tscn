@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt0ygpg6yoypx"]
+
+[ext_resource type="Shader" uid="uid://5vh675j5bufa" path="res://thunder.gdshader" id="1_fm26b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8n153"]
+shader = ExtResource("1_fm26b")
+shader_parameter/lightning_color = Color(0.835993, 0.830461, 0.513887, 0.65098)
+shader_parameter/size = 0.005
+shader_parameter/width = 0.4
+shader_parameter/speed = 1.0
+shader_parameter/cycle = 0.17
+shader_parameter/ratio = 5.0
+shader_parameter/time_shift = 0.7
+shader_parameter/strike_count = 4
+shader_parameter/strike_delay = 0.25
+shader_parameter/glow_intensity = 1.0
+
+[node name="ColorRect" type="ColorRect"]
+visible = false
+material = SubResource("ShaderMaterial_8n153")
+offset_right = 40.0
+offset_bottom = 40.0

@@ -1,20 +1,15 @@
-extends Window
+extends ColorRect
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	visible = false
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("Settings Menu"):
-		visible = true
-	#$AudioStreamPlayer2D.play()
-
-func _on_close_requested() -> void:
-	visible = false
+	pass
 
 
 func _on_check_box_4_toggled(toggled_on: bool) -> void:
-	pass # Replace with function body.
+	visible = toggled_on

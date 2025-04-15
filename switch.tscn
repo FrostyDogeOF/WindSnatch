@@ -5,7 +5,7 @@ size = Vector2(5.95789, 1.1061)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3pe11"]
 
-[node name="Area2D" type="Area2D"]
+[node name="switch" type="Area2D"]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(0.00597084, -0.553052)
